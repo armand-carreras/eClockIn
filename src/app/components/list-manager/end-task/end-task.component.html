@@ -1,0 +1,24 @@
+<mat-card>
+    <mat-card-header>
+        <mat-card-title>Elapsed time</mat-card-title>
+        <mat-card-subtitle>Mr. boss is watching you!</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+        {{formatedTime}}
+    </mat-card-content>
+    <mat-card-actions>
+        <button mat-icon-button > 
+            <mat-icon>
+                done_all
+            </mat-icon>
+        </button>
+        <button mat-icon-button (click)='pauseResumeTask()'>
+            <mat-icon *ngIf='user.currentTask?.active'>
+                pause
+            </mat-icon>
+            <mat-icon *ngIf='!user.currentTask?.active'>
+                forward
+            </mat-icon>
+        </button>
+    </mat-card-actions>
+</mat-card>

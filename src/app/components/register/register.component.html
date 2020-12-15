@@ -1,0 +1,62 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<div class="wrapper fadeInDown">
+  <div id="formContent">
+
+    <div class="fadeIn first">
+      <div class="text-center"> 
+        <img routerLink='/landing' routerLinkActive='active' class="img-fluid" src="https://media.discordapp.net/attachments/768885945398722570/787966474991829042/eClonkInlogo.png?width=618&height=538" alt="Responsive image" style="width:20vh;">
+      </div>
+    </div>
+
+    <div class="fadeIn five">
+        <h2>Register</h2>
+    </div>
+
+    <form [formGroup]='formGroup' class="was-validated"> 
+
+        <div class="form-group">
+        <input type="text" id="login" class="fadeIn first form-control" formControlName="name" placeholder="name" required>
+        <div class="valid-feedback">Valid</div>
+        <div class="invalid-feedback">Please fill out this field.</div>
+        </div>
+
+        <div class="form-group">
+          <input type="email" id="login" class="fadeIn first form-control" formControlName="email" placeholder="email" email required>
+          <div class="valid-feedback">Valid</div>
+          <div class="invalid-feedback">Please fill out this field.</div>
+        </div>
+
+        <div class="form-group">
+          <input type="password" id="login" class="fadeIn second form-control" formControlName="password" placeholder="password" required>
+          <div class="valid-feedback">Valid</div>
+          <div class="invalid-feedback">Please fill out this field.</div>
+        </div>
+
+        <div class="form-group">
+          <input type="password" id="repeat-password" class="fadeIn third form-control" formControlName="repassword" placeholder="repeat password" required>
+          <div class="valid-feedback">Valid</div>
+          <div class="invalid-feedback">Please fill out this field.</div>
+        </div>
+
+        <div class="form-group form-check">
+          <label class="form-check-label">
+            <input class="form-check-input" type="checkbox" name="remember" required> I agree to the terms and conditions.
+            <div class="valid-feedback">Valid.</div>
+            <div class="invalid-feedback">Check this checkbox to continue.</div>
+          </label>
+        </div>
+
+        <button mat-raised-button type="submit" class="fadeIn fourth alignButton btn btn-warning" (click)='registerUser(formGroup)' [disabled]='formGroup.invalid'>
+        Register Me!
+        </button>
+    </form>
+
+    <div id="formFooter" class="fadeIn six">
+      <p style="color:white">Already registed?</p><a class="underlineHover" routerLink='/login' routerLinkActive='active'>Go to Login</a>
+    </div>
+
+  </div>
+</div>

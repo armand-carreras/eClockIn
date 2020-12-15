@@ -1,0 +1,48 @@
+
+
+<mat-card>
+    <img src="../../../assets/eClonkInlogo.png">
+    <mat-card-header>
+        <mat-card-title>Name: {{user.name}}</mat-card-title>
+        <mat-card-subtitle>Total tasks done: {{totalTasks()}}</mat-card-subtitle>
+        <mat-card-subtitle>Total Elapsed time: {{totalElapsedTime() | totalFormat}}</mat-card-subtitle>
+        
+    </mat-card-header>
+    <mat-card-content>
+        <mat-divider></mat-divider>
+        <button mat-icon-button color='primary' (click)='toggleT()'>
+            <mat-icon>add</mat-icon>
+        </button>
+        <mat-label>Show more info.</mat-label>
+        
+        <mat-list *ngIf='toggle'>
+            <mat-list-item *ngFor="let task of user.completedTaskList">
+                <p>{{task.name}}</p>
+                <p>{{task.initDate | date:'short'}}</p>
+                <p>{{task.endDate | date:'short'}}</p>
+                <p>{{elapsedTime(task.initDate, task.endDate)}}</p>
+            </mat-list-item>
+            
+        </mat-list>
+        <button (click)='logOut()'>Logout</button>
+    </mat-card-content>
+</mat-card>
+
+<app-start-task [user]='user'
+                *ngIf='startVisible'
+                [tasksArray]='tasksArray'
+                (emitTask)='startingTaskHandle($event)'>
+</app-start-task>
+
+<app-end-task   [user]='user'
+                *ngIf="endVisible"
+                [chrono]='chronoTime'> 
+</app-end-task>
+
+
+
+
+
+
+
+

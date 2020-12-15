@@ -1,0 +1,24 @@
+@media screen and (max-width: 800px){
+    :host{
+        height: 100%;
+        margin: 0;
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+        background-color: rgb(182, 182, 182);
+    }
+    mat-card{
+        width: 90vw;
+        display: flex;
+        flex-flow: column;
+        justify-content: center;
+        margin-bottom: 1rem;
+        margin-top: 1rem;
+    }
+    img{
+        align-self: center;
+        margin-bottom: 2rem;
+        width: 6.5rem;
+        height: auto;
+    }
+}
