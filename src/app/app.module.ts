@@ -20,7 +20,7 @@ import { FormsModule } from '@angular/forms';
 import { TotalFormatPipe } from './shared/pipes/total-format.pipe';
 import { ChronoFormatPipe } from './shared/pipes/chrono-format.pipe';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
-import { LoggedInAuthService } from './shared/services/logged-in-auth.service';
+
 
 @NgModule({
   declarations: [
@@ -45,7 +45,7 @@ import { LoggedInAuthService } from './shared/services/logged-in-auth.service';
     FormsModule,
     BrowserAnimationsModule
   ],
-  providers: [AuthService, LoggedInAuthService],
+  providers: [AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

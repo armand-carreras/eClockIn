@@ -1,12 +1,7 @@
-import { identifierName } from '@angular/compiler';
-import { asLiteral } from '@angular/compiler/src/render3/view/util';
 import { Component, Input, OnInit } from '@angular/core';
-import { GuardsCheckEnd } from '@angular/router';
-import { LoginRoutingModule } from 'projects/auth/src/app/modules/login/login-routing.module';
-import { SafeSubscriber } from 'rxjs/internal/Subscriber';
 import { User } from '../../../shared/interfaces/user';
 import { FireService } from '../../../shared/services/fire.service';
-import { LoggedInAuthService } from '../../../shared/services/logged-in-auth.service';
+
 
 @Component({
   selector: 'app-end-task',
