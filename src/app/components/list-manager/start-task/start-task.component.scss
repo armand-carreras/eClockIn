@@ -10,6 +10,7 @@
         display: flex;
         flex-flow: column;
         justify-content: center;
+        background-color:rgb(48, 48, 48);
     }
     form{
         display: flex;
@@ -36,5 +37,58 @@
             align-self: center;
             content: 'Start your Task';
         }
+
+        mat-option  {
+            background-color: white;
+
+        }
     }
+}
+
+:host{
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    
+}
+mat-card{
+    width: 68vw;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    background-color:rgb(22, 22, 22);
+    padding:30px;
+    border-radius: 10px;
+}
+form{
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    button{
+        align-self: center;
+        
+        margin-top: 1rem;
+        width: 4rem;
+        height: auto;
+        mat-icon{
+            color: rgb(52, 148, 52);
+            width: 4rem;
+            height: auto;
+            align-self: center;
+            font-size: 4rem;
+        }
+        
+    }
+    &::after{
+        margin-top: 0.5rem;
+        display: block;
+        align-self: center;
+        content: 'Start your Task';
+    }
+}
+
+.fondo{
+    background-image: url('https://www.sadhanazaragoza.es/wp-content/uploads/2017/08/grey-background-07.jpg');
+    padding: 20px;
+    border-radius: 10px;
 }

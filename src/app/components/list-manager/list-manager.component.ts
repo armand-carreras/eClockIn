@@ -26,31 +26,8 @@ export class ListManagerComponent implements OnInit {
               private routes: ActivatedRoute,
               private authService: AuthService) { 
     this.user={};
-    this.authService.user.subscribe(data => {
-      this.afs.getLoginUser$(data.uid).subscribe(data =>{
-        this.user = data[0];
-        console.log(this.user);
-      })
-    });
     this.chronoTime = 0;
-    this.tasksArray=[
-    'Place hero image to landing page', 
-    'Add login Button to landing page',
-    'Add link to register into landing page', 
-    'Adaptar formulario de login', 
-    'Enviar informacion al servicio auth', 
-    'Enviar credenciales con firebase', 
-    'When login success go to TaskManager component', 
-    'If no registered then error', 
-    'Implementar link to register en /login', 
-    'Adaptacion componente register', 
-    'Implementar Validators necesarios', 
-    'Conectar a la base de datos para registrarse', 
-    'Añadir estilos al Register', 
-    'taskLisk añadir gestion de la lista de tareas del empleado', 
-    'mostrar por pantalla taskList', 
-    'añadir button para controlar si hacer hide o no de las tareas completadas',
-    'Login - Añadir funcionalidad, usar transfer service para pasar usuario a list manager']
+    this.afs.getTasks$().subscribe(e =>{ console.log(e['taskArray']); this.tasksArray = e['taskArray']})
 
 }
 
@@ -64,7 +41,13 @@ export class ListManagerComponent implements OnInit {
     //   })
     // });
     this.toggle=false;
-    setTimeout(function(){},200)
+    this.authService.user.subscribe(data => {
+      this.afs.getLoginUser$(data.uid).subscribe(data =>{
+        this.user = data[0];
+        console.log(this.user);
+      })
+    })
+    
     // console.log(this.singleTask.endDate, this.singleTask.initDate);
     // this.elapsedTimeString = this.elapsedTime(this.singleTask.initDate, this.singleTask.endDate);
     // console.log(this.elapsedTimeString);
@@ -101,6 +84,11 @@ export class ListManagerComponent implements OnInit {
     else{this.chronoTime = 0}
     console.log('TaskStart');
     this.afs.userUpdateTask(this.user);
+  }
+
+  completedTaskHandle(user: User){
+    this.user = user;
+    this.afs.createCompleted(user);
   }
 
   toggleT(){

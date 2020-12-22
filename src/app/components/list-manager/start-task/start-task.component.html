@@ -1,20 +1,21 @@
 
-
 <mat-card>
-    <h1>Pick your Task.</h1>
+    <div class="fondo">
+    <h1 >Pick your Task</h1>
     <form >
-        <mat-form-field appearance="fill">
-            <mat-label>Tasks</mat-label>
-            <mat-select [formControl]="taskControl" required>
-                <mat-option>taskList</mat-option>
-                <mat-option *ngFor="let task of tasksArray" [value]="task">
+        <mat-form-field >
+            <mat-label style="color:white">Tasks</mat-label>
+            <mat-select  [formControl]="taskControl" style="color:white" required>
+                <mat-option style="color:white">taskList</mat-option>
+                <mat-option *ngFor="let task of tasksArray" [value]="task" >
                     {{task}}
                 </mat-option>
             </mat-select>
-        <mat-error *ngIf="taskControl.hasError('required')">Please choose a Task</mat-error>
+        <mat-error *ngIf="taskControl.hasError('required')" style="color:white">Please choose a Task</mat-error>
         </mat-form-field>
-        <button mat-icon-button color='accent' [disabled]='taskControl.invalid' aria-label="Start your Task" (click)='startTask()'>
-            <mat-icon>play_circle_outline</mat-icon>
-        </button>
+        <button mat-icon-button color='accent'  [disabled]='taskControl.invalid' aria-label="Start your Task" (click)='startTask()'>
+            <mat-icon >play_circle_outline</mat-icon>
+        </button> <br> 
     </form>
+</div>
 </mat-card>

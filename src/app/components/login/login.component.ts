@@ -39,13 +39,13 @@ export class LoginComponent implements OnInit {
     });
   }
   
-  loginUser(formGroup){
+  async loginUser(formGroup){
     console.log('entro LoginUSer()');
       this.user.email = formGroup.get('email').value;
       this.user.password = formGroup.get('password').value;
-      this.authService.login(this.user.email,this.user.password);
-      setTimeout(function(){},100); //let time to login...
-      this.router.navigate([`/list-manager`])
+      await this.authService.login(this.user.email,this.user.password);
+      this.router.navigate([`/list-manager`]) //let time to login...
+      
   };
   
   

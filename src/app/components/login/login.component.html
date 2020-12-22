@@ -24,7 +24,7 @@
 
 <div class="wrapper fadeInDown">
 
-  <button mat-raised-button type="submit" [disabled]=''class="fadeIn fourth alignButton" >List-Manager</button>
+  <!-- <button mat-raised-button type="submit" [disabled]=''class="fadeIn fourth alignButton" >List-Manager</button> -->
   <div id="formContent">
 
     <div class="fadeIn first">
@@ -53,12 +53,12 @@
         <div class="invalid-feedback">Please fill out this field.</div>
       </div>
 
-      <button mat-raised-button type="submit" (click)='loginUser(formGroup)' class="fadeIn fourth alignButton btn btn-warning" [disabled]='formGroup.invalid'>
+      <button mat-flat-button color="warn" type="submit" (click)='loginUser(formGroup)' class="fadeIn fourth alignButton btn btn-warning" [disabled]='formGroup.invalid'>
         Login
         </button><br>
-        <mat-error *ngIf='logError'>
+        <!-- <mat-error *ngIf='logError'>
           Login Incorrecto porfavor vuelva a intentarlo.
-        </mat-error>
+        </mat-error> -->
     </form>
 
     <div id="formFooter" class="fadeIn six">
@@ -67,4 +67,3 @@
 
   </div>
 </div>
-

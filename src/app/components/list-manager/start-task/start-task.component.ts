@@ -1,7 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 import { Task } from '../../../shared/interfaces/task';
-
 import { User } from '../../../shared/interfaces/user';
 
 @Component({
@@ -30,8 +29,10 @@ export class StartTaskComponent implements OnInit {
 
     this.newTask.name = this.taskControl.value;
     this.newTask.initDate = new Date();
+    this.newTask.lastPausedDate = new Date;
+    this.newTask.elapsed = 0;
     this.newTask.active = true;
-  
+    
     console.log(this.newTask)
     this.emitTask.emit(this.newTask)
   }

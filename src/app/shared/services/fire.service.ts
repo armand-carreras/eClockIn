@@ -16,7 +16,9 @@ export class FireService {
     let currentTask = user.currentTask;
     this.fireService.collection<User>('Users').doc(user.id).update(user);
   }
-  
+  createCompleted(user:User){
+    this.fireService.collection<User>('Users').doc(user.id).set(user)
+  }
   getLoginUser$(uid:string): Observable<User[]>{
     const loginRef = this.fireService.collection<User>('Users', ref=>ref.where('id', '==', uid));
     return loginRef.valueChanges();
@@ -26,7 +28,7 @@ export class FireService {
     return loginRef.valueChanges();
   }
   getTasks$(): Observable<string[]>{
-    return this.fireService.collection<string[]>('Tasks').doc().valueChanges()
+    return this.fireService.collection<string[]>('Tasks').doc('jSw6pMpopJvQCTR3cvi8').valueChanges();
   }
   createUser(id: string, name: string,email: string,password: string){
     let user = {

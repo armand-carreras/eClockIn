@@ -1,40 +1,52 @@
 
 
-<mat-card>
+<mat-card class="manager">
+    <div class="imgHeader">
+    <button mat-flat-button color="warn" class='alignBtn' style="margin-top:7vh; margin-right:5vh" (click)='logOut()'>Logout</button>
+      
     <img src="../../../assets/eClonkInlogo.png">
-    <mat-card-header>
-        <mat-card-title>Name: {{user.name}}</mat-card-title>
-        <mat-card-subtitle>Total tasks done: {{totalTasks()}}</mat-card-subtitle>
-        <mat-card-subtitle>Total Elapsed time: {{totalElapsedTime() | totalFormat}}</mat-card-subtitle>
-        
+    <mat-card-title style="text-align:center" class="sizeLetter">User Info Task </mat-card-title>
+        <mat-divider style="margin-bottom: 3vh"></mat-divider>
+    <mat-card-header >
+        <mat-card-title style="margin-top: 3vh" class="sizeLetter">Name </mat-card-title>
+        <mat-card-subtitle class="sizeNum">{{user.name}}</mat-card-subtitle>
+        <mat-card-title class="sizeLetter">Total Tasks Done </mat-card-title>
+        <mat-card-subtitle class="sizeNum">{{totalTasks()}}</mat-card-subtitle>
+        <mat-card-title class="sizeLetter">Total Elapsed time</mat-card-title>
+        <mat-card-subtitle class="sizeNum">{{totalElapsedTime()}}</mat-card-subtitle>
     </mat-card-header>
+    </div>
     <mat-card-content>
-        <mat-divider></mat-divider>
+
         <button mat-icon-button color='primary' (click)='toggleT()'>
             <mat-icon>add</mat-icon>
         </button>
-        <mat-label>Show more info.</mat-label>
+
+        <mat-label class="sizeNum">Show more info</mat-label>
         
         <mat-list *ngIf='toggle'>
             <mat-list-item *ngFor="let task of user.completedTaskList">
-                <p>{{task.name}}</p>
-                <p>{{task.initDate | date:'short'}}</p>
-                <p>{{task.endDate | date:'short'}}</p>
-                <p>{{elapsedTime(task.initDate, task.endDate)}}</p>
+                <li class="sizeNum">{{task.name}}</li>
+                <p class="sizeNum">{{task.initDate['seconds']*1000 | date:'h:mm:ss a' }}</p>
+                
+                <p class="sizeNum">{{task.endDate['seconds']*1000 | date:'h:mm:ss a' }}</p>
+                
+                <p class="sizeNum">{{task.elapsed | totalFormat}}</p>
             </mat-list-item>
-            
         </mat-list>
-        <button (click)='logOut()'>Logout</button>
+
     </mat-card-content>
 </mat-card>
 
 <app-start-task [user]='user'
+                class="task"
                 *ngIf='startVisible'
                 [tasksArray]='tasksArray'
                 (emitTask)='startingTaskHandle($event)'>
 </app-start-task>
 
 <app-end-task   [user]='user'
+                class="task"
                 *ngIf="endVisible"
                 [chrono]='chronoTime'> 
 </app-end-task>

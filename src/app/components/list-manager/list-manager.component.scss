@@ -1,24 +1,106 @@
+:host{
+    height: 130vh;
+    margin: 0;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+  background-image:url('https://lh3.googleusercontent.com/proxy/LmuBVUmOwO974l3uyHdoCxBWxMXs7clGn3P8Ae2JIlWfr7LhERlspghmzkE_lz_4BOcyhVamLfvTdv2DfOQs_rTYl27qQhJIOJcPRXOu6T7g7UO5c0JG_w');
+    background-size: cover;
+}
+mat-card{
+    width: 70vw;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(0, 0, 0);
+    margin-top: 1rem;
+    background-color:rgb(29, 29, 29);
+    margin-bottom: 2vh;
+}
+img{
+    align-self: center;
+    margin-bottom: 2rem;
+    margin-left: 2rem;
+    margin-top: 0.5rem;
+    width: 6.5rem;
+    height: auto;
+}
+.imgHeader{
+    background-image: url('https://www.sadhanazaragoza.es/wp-content/uploads/2017/08/grey-background-07.jpg');
+    background-size: cover;
+    border-radius: 10px;
+    border: 2px solid black;
+    height: 50vh;
+    width:60vw;
+}
+
+.sizeNum{
+    font-size:2.5vh;
+    margin-top:1vh;
+    color:white;
+}
+
+.colorLetter{
+    color:white;
+}
+
+.alignBtn{
+float:right;
+
+}
+p{ color:azure;}
 @media screen and (max-width: 800px){
     :host{
-        height: 100%;
+        height: auto;
         margin: 0;
         display: flex;
         flex-flow: column;
         align-items: center;
-        background-color: rgb(182, 182, 182);
+        background-color: rgb(155, 155, 155);
     }
+    mat-list{
+        color: gray;
+
+    }
+    mat-list-item{
+        margin-bottom: 1rem;
+    }
+    p{ color:azure;}
     mat-card{
         width: 90vw;
+        height: auto;
         display: flex;
         flex-flow: column;
         justify-content: center;
-        margin-bottom: 1rem;
+        background-color: rgb(0, 0, 0);
         margin-top: 1rem;
+        background-image: url('https://i.pinimg.com/originals/ad/47/af/ad47af29ad50df1477b9413f9d521db0.jpg');
+        background-size: cover;
     }
     img{
         align-self: center;
         margin-bottom: 2rem;
+        margin-left: 2rem;
+        margin-top: 0.5rem;
         width: 6.5rem;
         height: auto;
+    }
+    .imgHeader{
+        background-image: url('https://www.sadhanazaragoza.es/wp-content/uploads/2017/08/grey-background-07.jpg');
+        background-size: cover;
+        border-radius: 10px;
+        border: 2px solid black;
+        width: 80vw;
+    }
+ 
+    .sizeNum{
+        font-size:2.5vh;
+        margin-top:1vh;
+        color:white;
+    }
+
+    .colorLetter{
+        color:white;
     }
 }

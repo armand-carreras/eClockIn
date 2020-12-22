@@ -1,15 +1,137 @@
+:host{
+    height: 100;
+    margin: 0;
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+   
+   
+}
+
+img{
+    align-self: center;
+    margin-bottom: 2rem;
+    width: 6.5rem;
+    height: auto;
+}
+
+.alignBtn{
+    float:right;
+}
+
+mat-card{
+    width: 70vw;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    margin-bottom: 1rem;
+    border-radius: 10px;
+    margin-top: 1rem;
+     background-image: url('https://i.pinimg.com/originals/ad/47/af/ad47af29ad50df1477b9413f9d521db0.jpg');
+}
+img{
+    align-self: center;
+    margin-bottom: 2rem;
+    margin-left: 2rem;
+    margin-top: 0.5rem;
+    width: 6.5rem;
+    height: auto;
+}
+.imgHeader{
+    background-image: url('https://www.sadhanazaragoza.es/wp-content/uploads/2017/08/grey-background-07.jpg');
+    background-size: cover;
+    border-radius: 10px;
+    border: 2px solid black;
+}
+
+.sizeNum{
+    font-size:2.5vh;
+    margin-top:1vh;
+    color:white;
+}
+
+.sizeLetter{
+    font-size:3.5vh;
+    margin-top:1vh;
+    color:white;
+}
+
+.colorLetter{
+    color:white;
+}
+
+.marginIcon{
+    margin-left:1.6vh;
+}
+
+.sizeIcon{
+    font-size: 5vh;
+}
+
+
 @media screen and (max-width: 800px){
     :host{
+        height: 150vh;
+       
+        margin: 0;
         display: flex;
         flex-flow: column;
         align-items: center;
-        
+        background-color: rgb(153, 153, 153);
     }
     mat-card{
         width: 90vw;
         display: flex;
         flex-flow: column;
         justify-content: center;
+        margin-bottom: 1rem;
+        margin-top: 1rem;
+         background-image: url('https://i.pinimg.com/originals/ad/47/af/ad47af29ad50df1477b9413f9d521db0.jpg');
     }
-   
+    img{
+        align-self: center;
+        margin-bottom: 2rem;
+        margin-left: 2rem;
+        margin-top: 0.5rem;
+        width: 6.5rem;
+        height: auto;
+    }
+    .imgHeader{
+        background-image: url('https://www.sadhanazaragoza.es/wp-content/uploads/2017/08/grey-background-07.jpg');
+        background-size: cover;
+        border-radius: 10px;
+        border: 2px solid black;
+    }
+ 
+    .sizeNum{
+        font-size:2.5vh;
+        margin-top:1vh;
+        color:white;
+    }
+
+    .sizeLetter{
+        font-size:3.5vh;
+        margin-top:1vh;
+        color:white;
+    }
+
+    .colorLetter{
+        color:white;
+    }
+
+    .marginIcon{
+        margin-left:1.6vh;
+    }
+
+    .sizeIcon{
+        font-size: 5vh;
+    }
+
+    .boss{
+        float:right;
+        font-size:2.5vh;
+        margin-top:1vh;
+        color:white;
+
+    }
 }
